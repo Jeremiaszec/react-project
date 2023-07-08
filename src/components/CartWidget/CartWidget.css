@@ -1,0 +1,17 @@
+.cart-widget {
+    position: absolute;
+    right: 10px;
+    margin-right: 20px;
+    transform: translateY(8px);
+}
+
+.cart-widget svg {
+    font-size: 35px;
+}
+
+.cart-widget__qty {
+    position: absolute;
+    right: -16px;
+    bottom: -2px;
+    font-size: 0.8rem;
+}
