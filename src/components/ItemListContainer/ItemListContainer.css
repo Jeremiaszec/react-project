@@ -1,0 +1,8 @@
+.items-list-container{
+    font-size: 20px;
+    color: rgb(128, 122, 122);
+    border: 1px solid #000;
+    height: 400px;
+    margin: 20px;
+    padding: 10px;
+}

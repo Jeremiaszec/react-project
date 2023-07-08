@@ -2,32 +2,28 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Navbar, Button, ItemListContainer } from './components'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [quantity, setQuantity] = useState(0)
+  const handleClickUp = () => { 
+    setQuantity(quantity + 1);
+  }  
+
+  const handleClickDown = () => { 
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  }  
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar quantity={ quantity } />
+      <Button callback={ handleClickUp } text="Agregar al carrito"></Button>
+      <Button callback={handleClickDown} text="Quitar del carrito" ></Button>
+      <ItemListContainer text="Aca van a ir mis items."></ItemListContainer>
     </>
   )
 }
